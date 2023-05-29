@@ -444,6 +444,20 @@
   dependencies:
     tslib "^2.4.0"
 
+"@toss/assert@^1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@toss/assert/-/assert-1.1.8.tgz#29d703b67b1e3498c96b0dce2e4fcb4ffce7dfed"
+  integrity sha512-EWJb7+lOMNjh0U9OQQDZ7kcn/qMZ0SVgjTkkG8tC0q4SI66f7yR3jDAQE2HqC2/jE07Qh57VzGkr38IE/HmCRQ==
+  dependencies:
+    "@toss/utils" "^1.4.2"
+
+"@toss/async-boundary@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@toss/async-boundary/-/async-boundary-1.4.2.tgz#0b4a213ae116129d5fc59559f67abd626a75cbc4"
+  integrity sha512-bBilKduzOvUR7Hck9bh5mXd00AKbB94QDgjJ/r16GNCrcYjs0/2ulNn1s4sL4Y4rF4x2z/FUyder07hJQcNLDQ==
+  dependencies:
+    "@toss/error-boundary" "^1.4.2"
+
 "@toss/emotion-utils@^1.1.8":
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/@toss/emotion-utils/-/emotion-utils-1.1.8.tgz#bb09d19a4746de69be1562ec1cb3269962c71857"
@@ -452,6 +466,13 @@
     "@babel/runtime" "^7.14.8"
     "@toss/utils" "^1.4.2"
     csstype "^3.0.9"
+
+"@toss/error-boundary@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@toss/error-boundary/-/error-boundary-1.4.2.tgz#5ba7df6de7d509ccedb103f54cc752e0571d4f57"
+  integrity sha512-rVl7/qpfrQxMPTM/IAaigVDNR1tb1RL+NA4ucHCRevy+dn4ZCXz5XVRdDprMtPI7DF/N+CpSARmbwkZ8vMNLHQ==
+  dependencies:
+    "@toss/utils" "^1.4.2"
 
 "@toss/utils@^1.4.2":
   version "1.4.2"
