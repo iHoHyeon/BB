@@ -1,8 +1,20 @@
-import { Button, Checkbox, FormControlLabel } from '@mui/material';
+import { Button, FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import styled from '@emotion/styled';
 import { Flex, Spacing } from '@toss/emotion-utils';
+import { useState } from 'react';
 
 export default function Home() {
+  const [questions, setQuestions] = useState([]);
+
+  const handleChange = (event: { target: { checked: boolean; value: string } }) => {
+    const isChecked = event.target.checked;
+    const name = event.target.value;
+
+    console.log(isChecked, name);
+
+    // if
+  };
+
   return (
     <main className="min-h-screen">
       <Spacing size={120} />
@@ -27,9 +39,13 @@ export default function Home() {
 
       <Flex.Center>
         <Flex direction="column">
-          <FormControlLabel label="19금 질문만" control={<Checkbox color="primary" />} />
-          <FormControlLabel label="19금 질문 포함" control={<Checkbox color="primary" />} />
-          <FormControlLabel label="19금 질문 없이" control={<Checkbox color="primary" />} />
+          <FormControl>
+            <RadioGroup name="controlled-radio-buttons-group" onChange={handleChange} color="primary">
+              <FormControlLabel label="19금 질문만" value="only" control={<Radio />} />
+              <FormControlLabel label="19금 질문 포함" value="include" control={<Radio />} />
+              <FormControlLabel label="19금 질문 없이" value="exclude" control={<Radio />} />
+            </RadioGroup>
+          </FormControl>
         </Flex>
       </Flex.Center>
     </main>
