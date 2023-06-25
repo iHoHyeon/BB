@@ -1,11 +1,11 @@
-import { Button, FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
-import styled from '@emotion/styled';
+import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
+import styled from 'styled-components';
 import { Flex, Spacing } from '@toss/emotion-utils';
-import { useState } from 'react';
+import Link from 'next/link';
+
+import StartBtn from '@/components/common/startBtn';
 
 export default function Home() {
-  const [questions, setQuestions] = useState([]);
-
   const handleChange = (event: { target: { checked: boolean; value: string } }) => {
     const isChecked = event.target.checked;
     const name = event.target.value;
@@ -22,17 +22,22 @@ export default function Home() {
       <Flex.Center direction="column">
         <Heading>혼자하기</Heading>
         <Spacing size={32} />
-        <ShadowButton color="primary" variant="contained">
-          시작하기
-        </ShadowButton>
+        <Link
+          href={{
+            pathname: '/quiz/balance',
+            query: { mode: 'single' },
+          }}
+        >
+          <StartBtn />
+        </Link>
 
         <Spacing size={64} />
 
         <Heading>친구들과 공유하기</Heading>
         <Spacing size={32} />
-        <ShadowButton color="primary" variant="contained">
-          시작하기
-        </ShadowButton>
+        <Link href={'/quiz/share/intro'}>
+          <StartBtn />
+        </Link>
       </Flex.Center>
 
       <Spacing size={64} />
@@ -55,15 +60,4 @@ export default function Home() {
 const Heading = styled.h2`
   font-size: 18px;
   font-weight: 600;
-`;
-
-const ShadowButton = styled(Button)`
-  color: #f7f7f7;
-  font-weight: bold;
-  font-size: 15px;
-
-  box-shadow: 2px 6px 35px rgba(178, 89, 195, 0.6);
-  border-radius: 20px;
-
-  padding: 12px 32px;
 `;
