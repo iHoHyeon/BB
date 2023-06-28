@@ -14,6 +14,8 @@ const StartButton = styled.button`
   color: #f7f7f7;
   background-color: #bf64d0;
   font-size: 15px;
+  line-height: 120%;
+  letter-spacing: 0.9px;
 
   width: 160px;
   height: 47px;
