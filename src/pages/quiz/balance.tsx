@@ -105,11 +105,9 @@ const QuizPage = () => {
             <ArrowLeftSVG />
           </button>
           <NextButton onClick={handleNextClick}>
-            <div className="flex gap-4">
-              <h1 className="text-white text-[15px]">다음질문</h1>
-              <div>
-                <ArrowRightSVG />
-              </div>
+            <h1 className="text-[#f7f7f7] text-[15px] tracking-[0.9px]">다음질문</h1>
+            <div className="absolute right-4">
+              <ArrowRightSVG />
             </div>
           </NextButton>
         </Footer>
@@ -131,19 +129,21 @@ const Footer = styled.div`
   margin-top: 50px;
 `;
 
-const RadioText = styled.span`
+const RadioText = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 160px;
   height: 320px;
+
   background: #f7f7f7;
-  font-size: 18px;
-  font-weight: bold;
+  line-height: 100%;
+  letter-spacing: 1.44px;
   color: #bf64d0;
   border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
+
+  padding: 8px;
 `;
 
 const RadioInput = styled.input.attrs({ type: 'radio' })<{ onChange: any }>`
@@ -151,16 +151,18 @@ const RadioInput = styled.input.attrs({ type: 'radio' })<{ onChange: any }>`
 
   &:hover + ${RadioText} {
     cursor: pointer;
-    box-shadow: 2px 6px 25px rgba(178, 89, 195, 0.6);
+    box-shadow: 2px 6px 35px 0px rgba(178, 89, 195, 0.6);
   }
 
   &:checked + ${RadioText} {
     background: #bf64d0;
     color: white;
+    box-shadow: 2px 6px 35px 0px rgba(178, 89, 195, 0.6);
   }
 `;
 
 const NextButton = styled.div`
+  position: relative;
   cursor: pointer;
   flex-shrink: 0;
   width: 161px;
