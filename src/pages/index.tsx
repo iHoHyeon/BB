@@ -1,4 +1,3 @@
-import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import styled from 'styled-components';
 import { Flex, Spacing } from '@toss/emotion-utils';
 import Link from 'next/link';
@@ -21,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen">
+    <>
       <Spacing size={120} />
 
       <Flex.Center direction="column">
@@ -29,7 +28,7 @@ export default function Home() {
         <Spacing size={32} />
         <Link
           href={{
-            pathname: '/quiz/balance',
+            pathname: '/quiz/1',
             query: { mode: 'single' },
           }}
         >
@@ -63,7 +62,7 @@ export default function Home() {
           </Label>
         </div>
       </Flex.Center>
-    </main>
+    </>
   );
 }
 

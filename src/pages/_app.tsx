@@ -27,7 +27,9 @@ export default function MyApp(props: MyAppProps) {
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Component {...pageProps} />
+          <main className="min-h-screen max-w-[820px] m-auto">
+            <Component {...pageProps} />
+          </main>
         </ThemeProvider>
       </CacheProvider>
     </RecoilRoot>
