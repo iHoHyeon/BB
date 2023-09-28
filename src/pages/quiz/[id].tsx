@@ -1,4 +1,4 @@
-import { Quiz } from '@/data/quiz';
+import { Quiz, quizData } from '@/data/quiz';
 import styled from '@emotion/styled';
 import { Button, Typography, IconButton } from '@mui/material';
 import { Home } from '@mui/icons-material';
@@ -8,15 +8,13 @@ import color from '@/constant/color';
 import { useEffect, useState } from 'react';
 
 const getQuizAll = async () => {
-  const response = await fetch('http://localhost:3000/api/quiz/all');
-  const data = (await response.json()) as Quiz[];
+  const data = quizData;
 
   return data;
 };
 
 const getQuiz = async (id: number) => {
-  const response = await fetch(`http://localhost:3000/api/quiz?id=${id}`);
-  const data = (await response.json()) as Quiz;
+  const data = quizData.find(quiz => quiz.id === Number(id));
 
   return data;
 };
